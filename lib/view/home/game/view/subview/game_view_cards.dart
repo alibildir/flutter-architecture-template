@@ -2,7 +2,7 @@ part of '../game_view.dart';
 
 extension _GameViewGamesCard on GameView {
   Widget buildColumnNewCard(GameViewModel viewModel) {
-    return viewModel.onNewsGameItems().toBuild<List<GameModel>?>(
+    return viewModel.onNewsGameItems().toBuild(
         onSuccess: (data) {
           return Column(
             children: [HeaderButton(titleText: LocaleKeys.home_game_newUpdate), GameGrid(models: data)],
@@ -26,7 +26,7 @@ extension _GameViewGamesCard on GameView {
   }
 
   Widget buildColumnUpdate(GameViewModel viewModel) {
-    return viewModel.onNewsGameItems().toBuild<List<GameModel>?>(
+    return viewModel.onNewsGameItems().toBuild(
         onSuccess: (data) {
           return Column(
             children: [

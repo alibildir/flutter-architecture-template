@@ -14,7 +14,7 @@ class OnBoardViewModel = _OnBoardViewModelBase with _$OnBoardViewModel;
 
 abstract class _OnBoardViewModelBase with Store, BaseViewModel {
   @override
-  void setContext(BuildContext context) => this.context = context;
+  void setContext(BuildContext context) => this.myContext = context;
   List<OnBoardModel> onBoardItems = [];
 
   @observable

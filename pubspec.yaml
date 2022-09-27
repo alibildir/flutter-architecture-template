@@ -6,7 +6,7 @@ publish_to: none
 version: 0.0.9
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.17.1 <3.0.0'
 
 dependencies:
   flutter:
@@ -15,11 +15,11 @@ dependencies:
   # state management
   flutter_mobx: ^2.0.0
   mobx: ^2.0.1
-  provider: ^5.0.0
+  provider: ^6.0.3
 
   # network
   # dio: ^4.0.0-prev3
-  vexana: ^2.2.0
+  vexana: ^3.0.1
 
   # database
   shared_preferences: ^2.0.5
@@ -28,22 +28,22 @@ dependencies:
   easy_localization: ^3.0.0
 
   # firebase
-  firebase_core: ^1.11.0
+  firebase_core: ^1.23.0
   firebase_analytics: any
   
   # core utilities
   kartal: ^2.1.0
   logger: ^1.0.0
-  webview_flutter: ^2.0.4
+  webview_flutter: ^3.0.4
 
   # ui utilities
   animations: ^2.0.0
   auto_size_text: ^3.0.0-nullsafety.0
-  cached_network_image: ^3.0.0-nullsafety
+  cached_network_image: ^3.2.1
   cupertino_icons: ^1.0.2
   flutter_rating_bar: ^4.0.0
-  flutter_svg: ^0.21.0-nullsafety.0
-  lottie: ^1.0.1
+  flutter_svg: ^1.1.5
+  lottie: ^1.4.2
   shimmer: ^2.0.0-nullsafety.0
 
   architecture_theme:
@@ -52,16 +52,19 @@ dependencies:
     path: module/architecture_widgets
   all_of_template:
     path: module/all_of_template
+  firebase_app_installations: ^0.1.1+8
+  flutterfire: ^0.0.1
+  fireflutter: ^0.2.16
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  build_runner: ^1.10.0
-  json_annotation: ^4.0.1
-  json_serializable: ^4.1.0
-  mobx_codegen: ^2.0.1+3
-  mockito: any
+  build_runner: ^2.2.1
+  json_annotation: ^4.7.0
+  json_serializable: ^6.4.0
+  mobx_codegen: ^2.0.7+3
+  mockito: ^5.3.2
   pedantic: ^1.11.0
 
 flutter:

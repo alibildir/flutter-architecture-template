@@ -29,7 +29,7 @@ abstract class _GameViewModelBase with Store, BaseViewModel {
   _GameViewModelBase(this.gameService);
 
   @override
-  void setContext(BuildContext context) => this.context = context;
+  void setContext(BuildContext context) => this.myContext = context;
 
   @observable
   bool isLoading = false;

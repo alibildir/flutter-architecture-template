@@ -26,7 +26,7 @@ abstract class _BurgerViewModelBase with Store, BaseViewModel {
   @observable
   List<BurgerModel> mainBurgerModel = [];
   @override
-  void setContext(BuildContext context) => this.context = context;
+  void setContext(BuildContext context) => this.myContext = context;
 
   RangeValues? _values;
 
@@ -71,14 +71,14 @@ abstract class _BurgerViewModelBase with Store, BaseViewModel {
 
   @action
   Future<void> fetchMinMax() async {
-    context?.navigation.pop();
+    myContext?.navigation.pop();
     _changeLoadingMain();
     mainBurgerModel = await burgerService.fetchBurgersLimited(max: _values?.end, min: _values?.start);
     _changeLoadingMain();
   }
 
   Future<void> fetchSort(BurgerSortValues value) async {
-    context?.navigation.pop();
+    myContext?.navigation.pop();
     _changeLoadingMain();
     mainBurgerModel = await burgerService.fetchBurgersSorted(sort: value, types: _isAscending ? BurgerSortValuesType.ASC : BurgerSortValuesType.DSC);
     _changeLoadingMain();

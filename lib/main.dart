@@ -10,6 +10,7 @@ import 'core/init/navigation/navigation_route.dart';
 import 'core/init/navigation/navigation_service.dart';
 import 'core/init/notifier/provider_list.dart';
 import 'core/init/notifier/theme_notifer.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async {
   await _init();
@@ -27,7 +28,7 @@ Future<void> main() async {
 Future<void> _init() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
 }
 
 class MyApp extends StatelessWidget {

@@ -20,7 +20,7 @@ class SplashViewModel = _SplashViewModelBase with _$SplashViewModel;
 
 abstract class _SplashViewModelBase with Store, BaseViewModel, DeviceAndCache {
   @override
-  void setContext(BuildContext context) => this.context = context;
+  void setContext(BuildContext context) => this.myContext = context;
 
   @observable
   bool isFirstInit = true;
@@ -48,7 +48,7 @@ abstract class _SplashViewModelBase with Store, BaseViewModel, DeviceAndCache {
     _networkInit();
     final isNeedForceUpdate = await _checkAppVersion();
     if (isNeedForceUpdate) {
-      showAboutDialog(context: context!, children: [Text('Neeed to Update')]);
+      showAboutDialog(context: myContext!, children: [Text('Neeed to Update')]);
     } else {
       // await navigation.navigateToPageClear(path: NavigationConstants.TEST_VIEW);
     }
@@ -73,7 +73,7 @@ abstract class _SplashViewModelBase with Store, BaseViewModel, DeviceAndCache {
 
   Future<void> startAnimationOnView() async {
     if (context == null) return;
-    await Future.delayed(context!.durationLow);
+    await Future.delayed(myContext!.durationLow);
     _changeFirstInit();
   }
 

@@ -16,7 +16,7 @@ class SocialMockViewModel extends Mock implements SocialViewModel {
 class SocialFakeViewModel extends Fake implements SocialViewModel {
   SocialFakeViewModel(SocialNetworkMock mockService);
   @override
-  BuildContext? context;
+  late BuildContext myContext;
 
   @override
   bool isPageLoading = false;
@@ -32,8 +32,8 @@ class SocialFakeViewModel extends Fake implements SocialViewModel {
   }
 
   @override
-  void setContext(BuildContext? context) {
-    this.context = context;
+  void setContext(BuildContext context) {
+    this.myContext = context;
   }
 
   void changeLoading() {

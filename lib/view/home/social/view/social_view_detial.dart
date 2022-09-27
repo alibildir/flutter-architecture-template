@@ -22,7 +22,7 @@ class SocialUserViewDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: socialServiceService.fetchUser(socialUser!.id).toBuild<SocialUser>(
+      body: socialServiceService.fetchUser(socialUser!.id).toBuild(
           onSuccess: (data) {
             return Center(child: Image.network(data!.image!));
           },

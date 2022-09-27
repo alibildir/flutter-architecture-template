@@ -18,7 +18,7 @@ class SettingsViewModel = _SettingsViewModelBase with _$SettingsViewModel;
 abstract class _SettingsViewModelBase with Store, BaseViewModel {
   final userModel = UserModel.fake();
   @override
-  void setContext(BuildContext context) => this.context = context;
+  void setContext(BuildContext context) => this.myContext = context;
 
   @observable
   Locale? appLocale = LanguageManager.instance.enLocale;
@@ -27,8 +27,8 @@ abstract class _SettingsViewModelBase with Store, BaseViewModel {
   void init() {}
 
   void changeAppTheme() {
-    if (context != null) {
-      context!.read<ThemeNotifier>().changeTheme();
+    if (myContext != null) {
+      myContext!.read<ThemeNotifier>().changeTheme();
     }
   }
 
@@ -36,7 +36,7 @@ abstract class _SettingsViewModelBase with Store, BaseViewModel {
   void changeAppLocalization(Locale? locale) {
     if (locale != null) {
       appLocale = locale;
-      context?.setLocale(locale);
+      myContext?.setLocale(locale);
     }
   }
 

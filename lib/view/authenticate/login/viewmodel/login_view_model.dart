@@ -21,7 +21,7 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   TextEditingController? passwordController;
 
   @override
-  void setContext(BuildContext context) => this.context = context;
+  void setContext(BuildContext context) => this.myContext = context;
   @override
   void init() {
     loginService = LoginService(VexanaManager.instance.networkManager);

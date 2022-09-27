@@ -8,7 +8,7 @@ import 'feed_mockito.dart';
 import 'social_network_mock.dart';
 
 void main() {
-  BuildContext? context;
+ late BuildContext context;
   SocialNetworkMock? mockService;
   INetworkManager networkManager;
   late SocialMockViewModel socialMockViewModel;

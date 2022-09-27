@@ -13,7 +13,7 @@ class BuildFeedViewModel = _BuildFeedViewModelBase with _$BuildFeedViewModel;
 
 abstract class _BuildFeedViewModelBase with Store, BaseViewModel {
   @override
-  void setContext(BuildContext context) => this.context = context;
+  void setContext(BuildContext context) => this.myContext = context;
 
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
   late DecorationHelper helper;
@@ -43,7 +43,7 @@ abstract class _BuildFeedViewModelBase with Store, BaseViewModel {
 
   @override
   void init() {
-    helper = DecorationHelper(context: context);
+    helper = DecorationHelper(context: myContext);
     feedService = BuildFeedService(vexanaManager!.networkManager, scaffoldKey);
   }
 

@@ -15,7 +15,7 @@ class TestViewModel = _TestViewModelBase with _$TestViewModel;
 abstract class _TestViewModelBase with Store, BaseViewModel {
   @override
   void setContext(BuildContext context) {
-    this.context = context;
+    myContext = context;
   }
 
   @override
@@ -36,7 +36,7 @@ abstract class _TestViewModelBase with Store, BaseViewModel {
   }
 
   void changeTheme() {
-    Provider.of<ThemeNotifier>(context!, listen: false).changeValue(AppThemes.DARK);
+    Provider.of<ThemeNotifier>(myContext!, listen: false).changeValue(AppThemes.DARK);
   }
 
   @action

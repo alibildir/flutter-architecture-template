@@ -31,7 +31,7 @@ abstract class _SocialViewModelBase with Store, BaseViewModel {
   _SocialViewModelBase(this._socialService);
 
   @override
-  void setContext(BuildContext? context) => this.context = context;
+  void setContext(BuildContext context) => this.myContext = context;
   @override
   void init() {
     _throttleStringHelper = ThrottleStringHelper();
